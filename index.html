@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="icon" href="./img/snake.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="container" style="display: grid;
+    grid-template-columns: 1fr 1fr;">
+        <div id="puntuacion" style="background: #ffa3a3;display: grid;grid-template-columns: 1fr;">
+            <h1>Bienvenido al juego 🐍 SNAKE 🐍</h1>
+            <h2>Presiones cualquiera de las flechas direccionales para comenzar (🡣 🡡 🡢 🡠)</h2>
+            <h2>Llega hasta 100 puntos para ganar. Mucha Suerte!</h2>
+            <div id="puntaje-container" style="background: #e44f4f;">
+                <h3 id="puntaje" style="display: grid;grid-template-columns: 1fr 1fr;">PUNTAJE: </h3>
+            </div>
+        </div>
+        <div id="canvas-container" style="text-align: center;padding: auto;">
+            <canvas id="canvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
