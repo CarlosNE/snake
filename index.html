@@ -8,21 +8,27 @@
     <link rel="icon" href="./img/snake.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div id="container" style="display: grid;
-    grid-template-columns: 1fr 1fr;">
-        <div id="puntuacion" style="background: #ffa3a3;display: grid;grid-template-columns: 1fr;">
-            <h1>Bienvenido al juego 🐍 SNAKE 🐍</h1>
-            <h2>Presiones cualquiera de las flechas direccionales para comenzar (🡣 🡡 🡢 🡠)</h2>
-            <h2>Llega hasta 100 puntos para ganar. Mucha Suerte!</h2>
-            <div id="puntaje-container" style="background: #e44f4f;">
-                <h3 id="puntaje" style="display: grid;grid-template-columns: 1fr 1fr;">PUNTAJE: </h3>
+    <div id="container" style="display: grid;grid-template-columns: 2fr 1fr;">
+        <div id="puntuacion"
+            style="background: #ffa3a3;display: grid;grid-template-columns: 1fr;border-radius: 10px;grid-auto-columns: minmax(100px, auto);">
+            <div id="titulo" style="padding: 10px;">
+                <h1>🎉 BIENVENIDO A 🐍 SNAKE 🐍 🎉</h1>
+                <h3>Llega hasta 💯 puntos para ganar. Mucha Suerte 😉🙌</h3>
+                <h4 style="font-weight:900;">Presione cualquiera de las flechas direccionales ⬅ ⬆ ⬇ ➡ para comenzar a jugar</h4>
+            </div>
+            <div id="puntaje-container"
+                style="background: #e44f4f;margin-top: 1%;margin-bottom: 1%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 10px;">
+                <h3 id="puntaje" style="display: grid;grid-template-columns: 1fr 1fr;">PUNTAJE:</h3>
+                <h3 id="tiempo" style="display: grid;grid-template-columns: 1fr 1fr;">TIEMPO:</h3>
             </div>
         </div>
         <div id="canvas-container" style="text-align: center;padding: auto;">
-            <canvas id="canvas" width="400" height="400"></canvas>
+            <canvas id="canvas" width="400" height="400" style="border-radius: 10px;"></canvas>
         </div>
     </div>
 </body>

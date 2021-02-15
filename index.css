@@ -1,3 +1,18 @@
 * {
   font-family: Roboto;
 }
+
+body {
+  background: #7b4d4d;
+}
+
+#puntuacion > * {
+  margin: auto;
+}
+
+#titulo h1 {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  padding: 10px;
+  font-size: 180%;
+}

@@ -12,6 +12,11 @@ function cargarConfiguracion() {
     contenedorPuntajeHtml = document.getElementById('puntaje')
     contenedorPuntajeHtml.insertAdjacentHTML('beforeend', '<div id="puntajeActual">0</div>')
     puntajeActual = document.getElementById('puntajeActual')
+
+    contenedorTiempoHtml = document.getElementById('tiempo')
+    contenedorTiempoHtml.insertAdjacentHTML('beforeend', '<div id="tiempoTranscurrido">0.0</div>')
+    tiempoActual = document.getElementById('tiempoTranscurrido')
+
     canvas = document.getElementById('canvas')
     context = canvas.getContext('2d')
     document.addEventListener("keydown", flechaPresionada)
