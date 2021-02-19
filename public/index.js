@@ -14,7 +14,7 @@ function cargarConfiguracion() {
     puntajeActual = document.getElementById('puntajeActual')
 
     contenedorTiempoHtml = document.getElementById('tiempo')
-    contenedorTiempoHtml.insertAdjacentHTML('beforeend', '<div id="tiempoTranscurrido">0.0</div>')
+    contenedorTiempoHtml.insertAdjacentHTML('beforeend', '<div id="tiempoTranscurrido">0</div>')
     tiempoActual = document.getElementById('tiempoTranscurrido')
 
     canvas = document.getElementById('canvas')
@@ -31,13 +31,18 @@ function cargarConfiguracion() {
 }
 
 // VARIABLES GLOBALES
-jugadorX = jugadorY = 10
-tabla = tileCount = 20
-manzanaX = manzanaY = 15
-velocidadX = velocidadY = 0
-cuerpoVibora = []
-colaVibora = 5
-puntos = 0
+let jugadorX = jugadorY = 10
+let tabla = tileCount = 20
+let manzanaX = manzanaY = 15
+let velocidadX = velocidadY = 0
+let cuerpoVibora = []
+let colaVibora = 5
+let puntos = 0
+let milisegundo = 0
+let segundo = 0
+let minuto = 0
+let tiempoJugado = 0
+
 function game() {
     jugadorX += velocidadX
     jugadorY += velocidadY
@@ -115,5 +120,20 @@ function flechaPresionada(evento) {
             velocidadX = 0
             velocidadY = 1
             break
+    }
+    if (evento.keyCode >= 37 && evento.keyCode >= 40)
+        tiempoJugado = setInterval(cronometrar, 0)
+}
+
+function cronometrar() {
+    tiempoActual.innerHTML = minuto + " : " + segundo + " : " + milisegundo
+    milisegundo++
+    if (milisegundo == 100) {
+        milisegundo = 0
+        segundo++
+    }
+    if (segundo == 60) {
+        segundo = 0
+        minuto++
     }
 }
