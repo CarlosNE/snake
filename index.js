@@ -122,7 +122,7 @@ function flechaPresionada(evento) {
             break
     }
     if (evento.keyCode >= 37 && evento.keyCode >= 40)
-        tiempoJugado = setInterval(cronometrar, 0)
+        tiempoJugado = setInterval(cronometrar, 10)
 }
 
 function cronometrar() {
