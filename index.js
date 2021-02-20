@@ -71,6 +71,8 @@ function game() {
         // Si la vibora colisiona con su propio cuerpo, vuelve a su tamaño original
         if (cuerpoVibora[i].x == jugadorX && cuerpoVibora[i].y == jugadorY) {
             colaVibora = 5
+            puntos = 0
+            puntajeActual.innerHTML = puntos
         }
     }
 
@@ -96,10 +98,15 @@ function game() {
 
 // Funcion que termina la ejecucion del juego
 function terminarJuego() {
+    // Se corta el llamado al cronometro
+    clearInterval(setIntervalID);
+
     // Se dibuja el mensaje en el canvas
     context.fillStyle = "white"
     context.font = "30px Roboto";
     context.fillText("FELICIDADES GANASTE!", 40, 200);
+    context.fillStyle = "aqua"
+    context.fillText(`TU TIEMPO FUE : ${tiempoActual.innerHTML}`, 25, 300);
 }
 // Depende que flecha se hmanzanaYa presionado, la vibora se movera en una direccion u otra.
 function flechaPresionada(evento) {
@@ -121,8 +128,8 @@ function flechaPresionada(evento) {
             velocidadY = 1
             break
     }
-    if ((evento.keyCode >= 37 && evento.keyCode <= 40) && tiempoJugado < 1)
-        tiempoJugado = setInterval(cronometrar, 10)
+    if ((evento.keyCode >= 37 && evento.keyCode <= 40) && tiempoActual.innerHTML == "0")
+        setIntervalID = setInterval(cronometrar, 10)
 }
 
 function cronometrar() {
